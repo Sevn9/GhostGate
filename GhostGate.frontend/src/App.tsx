@@ -6,7 +6,7 @@ const App = (): React.ReactElement | null => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route index element={<HomePage />} />
         <Route path="/404" element={<NotFoundPage />} />
       </Routes>
     </>
