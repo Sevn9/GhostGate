@@ -1,32 +1,47 @@
 import { useState } from "react";
-import "../../App.css";
-import viteLogo from "/vite.svg";
-import reactLogo from "../../assets/react.svg";
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+
+const defaultTheme = createTheme();
 
 export default function HomePage() {
   const [count, setCount] = useState(0);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <Container
+        component="main"
+        maxWidth="xs"
+        sx={{
+          bgcolor: "var(--tg-theme-bg-color)",
+        }}
+      >
+        <Box
+          sx={{
+            marginTop: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "var(--tg-theme-text-color)",
+          }}
+        >
+          <h1>GhostGate</h1>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <AdminPanelSettingsOutlinedIcon />
+          </Avatar>
+
+          <Button
+            sx={{ marginTop: 2 }}
+            variant="contained"
+            onClick={() => setCount((count) => count + 1)}
+          >
+            Подключено {count}
+          </Button>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
