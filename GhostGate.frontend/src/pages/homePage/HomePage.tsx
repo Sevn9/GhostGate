@@ -1,15 +1,14 @@
-import { useState } from "react";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 export default function HomePage() {
-  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container
@@ -21,24 +20,27 @@ export default function HomePage() {
       >
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 5,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             color: "var(--tg-theme-text-color)",
           }}
         >
-          <h1>GhostGate</h1>
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <AdminPanelSettingsOutlinedIcon />
-          </Avatar>
+          <Avatar
+            sx={{ m: 1, bgcolor: "secondary.main", width: 144, height: 144 }}
+            alt="Remy Sharp"
+            src="../public/icon_256.png"
+          />
+          <h1>Тариф не подключен</h1>
 
           <Button
-            sx={{ marginTop: 2 }}
+            sx={{ marginTop: 3 }}
             variant="contained"
-            onClick={() => setCount((count) => count + 1)}
+            size="large"
+            onClick={() => navigate("/getConfig")}
           >
-            Подключено {count}
+            Подключить
           </Button>
         </Box>
       </Container>
