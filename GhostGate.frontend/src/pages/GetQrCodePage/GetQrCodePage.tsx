@@ -11,6 +11,7 @@ const defaultTheme = createTheme();
 const GetQrCodePage = () => {
   const { tg } = useTelegram();
   const navigate = useNavigate();
+  tg.BackButton.show();
   tg.BackButton.onClick(() => navigate(-1));
 
   return (
@@ -24,7 +25,7 @@ const GetQrCodePage = () => {
       >
         <Box
           sx={{
-            marginTop: 5,
+            marginTop: 3,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -32,10 +33,10 @@ const GetQrCodePage = () => {
           }}
         >
           <h2>Ваш QR-код:</h2>
-          <Card variant="outlined" sx={{ maxWidth: 345 }}>
+          <Card variant="outlined" sx={{ width: 280 }}>
             <CardMedia
-              sx={{ height: 140 }}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              component="img"
+              image="../public/qrCodeTestImage-377x377.png"
               title="QRCode"
             />
           </Card>
