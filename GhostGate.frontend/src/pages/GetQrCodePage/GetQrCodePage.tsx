@@ -12,7 +12,7 @@ const GetQrCodePage = () => {
   const { tg } = useTelegram();
   const navigate = useNavigate();
   tg.BackButton.show();
-  tg.BackButton.onClick(() => navigate(-1));
+  tg.BackButton.onClick(() => navigate("getConfig"));
 
   return (
     <ThemeProvider theme={defaultTheme}>

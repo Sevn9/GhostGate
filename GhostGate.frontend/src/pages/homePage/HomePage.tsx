@@ -38,7 +38,7 @@ export default function HomePage() {
             sx={{ marginTop: 3 }}
             variant="contained"
             size="large"
-            onClick={() => navigate("/getConfig")}
+            onClick={() => navigate("getConfig")}
           >
             Подключить
           </Button>

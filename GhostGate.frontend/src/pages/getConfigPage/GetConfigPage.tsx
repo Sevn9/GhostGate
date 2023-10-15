@@ -46,7 +46,7 @@ const GetConfigPage = () => {
             sx={{ marginTop: 3, width: 200 }}
             variant="contained"
             size="large"
-            onClick={() => navigate("/getQrCode")}
+            onClick={() => navigate("getQrCode")}
           >
             qr-код
           </Button>

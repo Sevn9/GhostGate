@@ -9,9 +9,9 @@ const App = (): React.ReactElement | null => {
     <>
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/404" element={<NotFoundPage />} />
-        <Route path="/getConfig" element={<GetConfigPage />} />
-        <Route path="/getQrCode" element={<GetQrCodePage />} />
+        <Route path="getConfig" element={<GetConfigPage />} />
+        <Route path="getConfig/getQrCode" element={<GetQrCodePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
